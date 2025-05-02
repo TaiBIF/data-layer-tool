@@ -22,7 +22,9 @@ const customStyles = {
         paddingRight: "35px",
         backgroundColor: "#FFF",
         fontSize: "16px",
-        backgroundImage: 'url("/images/selectar.svg")',
+        backgroundImage: `url("${
+            import.meta.env.BASE_URL
+        }images/selectar.svg")`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "right 15px center",
         backgroundSize: "12px auto",
