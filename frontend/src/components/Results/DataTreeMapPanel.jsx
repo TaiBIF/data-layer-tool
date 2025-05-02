@@ -6,14 +6,20 @@ const DataMapPanel = ({ rows }) => {
     // 過濾掉 value 為 0 的資料
     const filteredData = rows.filter((d) => d.value > 0);
 
-    // 建立 log scale，用過濾後的資料
-    const logScale = d3
-        .scaleLog()
-        .domain([
-            d3.min(filteredData, (d) => d.value),
-            d3.max(filteredData, (d) => d.value),
-        ])
-        .range([0, 100]);
+    let logScale;
+
+    if (filteredData.length === 1) {
+        // 只有一筆資料，手動定義為固定比例尺
+        logScale = () => 100;
+    } else {
+        logScale = d3
+            .scaleLog()
+            .domain([
+                d3.min(filteredData, (d) => d.value),
+                d3.max(filteredData, (d) => d.value),
+            ])
+            .range([0, 100]);
+    }
 
     const columns = [
         { title: "物種類群", dataIndex: "name", width: "20%" },

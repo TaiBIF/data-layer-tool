@@ -14,13 +14,15 @@ import ResultSection from "./components/ResultSection";
 import {
     fakeTableRows,
     fakeLayerTableRows,
-    fakeTableMapData,
+    getFakeTableMapData,
 } from "./data/tableRows";
 
 function App() {
     const [speciesTableData, setSpeciesTableData] = useState([]);
     const [layerTableData, setLayerTableData] = useState([]);
     const [tableMapData, setTableMapData] = useState([]);
+
+    const fakeTableMapData = getFakeTableMapData();
 
     const getRandomRows = (data, maxCount = 70) => {
         const shuffled = [...data].sort(() => 0.5 - Math.random());

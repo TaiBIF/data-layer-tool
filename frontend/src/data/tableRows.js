@@ -644,7 +644,7 @@ export const fakeLayerTableRows = [
     },
 ];
 
-export const fakeTableMapData = [
+export const getFakeTableMapData = () => [
     {
         name: "昆蟲",
         value: getRandomInt(1_000_000, 3_000_000),
