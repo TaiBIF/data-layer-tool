@@ -12,6 +12,7 @@
   "dependencies": {
     "@geoman-io/leaflet-geoman-free": "^2.18.3",
     "clsx": "^2.1.1",
+    "d3": "^7.9.0",
     "leaflet": "^1.9.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

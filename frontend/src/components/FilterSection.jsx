@@ -2,11 +2,11 @@ import React from "react";
 import MapPanel from "./Map/MapPanel";
 import FilterPanel from "./FilterPanel";
 
-const FilterSection = () => {
+const FilterSection = ({ onSearch }) => {
     return (
         <section className="s1-filter-area">
             <MapPanel />
-            <FilterPanel />
+            <FilterPanel onSearch={onSearch} />
         </section>
     );
 };

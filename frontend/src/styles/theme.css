@@ -1755,14 +1755,14 @@ header .logo-icon svg {
     font-size: 16px;
     text-align: center;
 }
-.table-style1 tr:nth-child(odd) td {
+.table-style1 tr:nth-child(even) td {
     background: #f7f7f7;
 }
-.table-style1 tr:first-child td {
-    font-size: 16px;
-    background: #3a8458;
-    color: #fff;
-    font-weight: bold;
+.table-style1 thead tr td {
+    font-size: 16px !important;
+    background: #3a8458 !important;
+    color: #fff !important;
+    font-weight: bold !important;
 }
 .table-style1 tr:first-child td:first-child {
     border-radius: 10px 0px 0px 10px;
@@ -1771,7 +1771,7 @@ header .logo-icon svg {
     border-radius: 0px 10px 10px 0px;
 }
 @media (min-width: 768px) {
-    .table-style1 tr:first-child td {
+    .table-style1 thead tr td {
         font-size: 18px;
     }
 }

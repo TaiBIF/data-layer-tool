@@ -12,7 +12,7 @@ import {
     monthOptions,
 } from "../data/options";
 
-const FilterPanel = () => {
+const FilterPanel = ({ onSearch }) => {
     const {
         handleFilterSubmit,
         registerSetValueFn,
@@ -68,10 +68,15 @@ const FilterPanel = () => {
         registerGeoShapeWatcher(geoShape); // 每次 geoShape 有變動就註冊進 context
     }, [geoShape, registerSetValueFn, registerGeoShapeWatcher]);
 
+    const combinedHandleSubmit = (formFilters) => {
+        handleFilterSubmit(formFilters);
+        onSearch(formFilters);
+    };
+
     return (
         <form
             className="filter-area"
-            onSubmit={handleSubmit(handleFilterSubmit)}
+            onSubmit={handleSubmit(combinedHandleSubmit)}
         >
             <div className="ali-sp">
                 <div className="top-btn-area">

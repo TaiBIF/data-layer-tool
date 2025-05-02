@@ -93,7 +93,7 @@ const customStyles = {
     }),
     placeholder: (base) => ({
         ...base,
-        fontSize: "16px",
+        fontSize: "14px",
         color: "#999",
     }),
     menuPortal: (base) => ({
@@ -106,6 +106,7 @@ const CustomSelect = ({
     options,
     placeholder = "請選擇",
     isMulti = false,
+    defaultValue,
     ...props
 }) => {
     return (
@@ -116,6 +117,7 @@ const CustomSelect = ({
             placeholder={placeholder}
             isMulti={isMulti}
             styles={customStyles}
+            defaultValue={defaultValue}
             {...props}
         />
     );

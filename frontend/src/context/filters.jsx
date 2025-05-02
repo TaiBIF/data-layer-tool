@@ -5,7 +5,9 @@ const FiltersContext = createContext();
 function FiltersProvider({ children }) {
     const setValueFnRef = useRef(null);
     const clearDrawLayerFnRef = useRef(null);
+    const resultSectionRef = useRef(null);
     const [geoShape, setGeoShape] = useState(null);
+    const [showResultSection, setShowResultSection] = useState(false);
 
     const registerSetValueFn = (fn) => {
         setValueFnRef.current = fn;
@@ -31,9 +33,20 @@ function FiltersProvider({ children }) {
         }
     };
 
-    const handleFilterSubmit = (filters) => {
-        // filters: {geoShape, startYear, endYear, months, taxonGroups, recordTypes }
-        console.log("搜尋條件：", filters);
+    const handleFilterSubmit = (formFilters) => {
+        // formFilters: {geoShape, startYear, endYear, months, taxonGroups, recordTypes }
+        setShowResultSection(true);
+
+        setTimeout(() => {
+            if (resultSectionRef.current) {
+                window.scrollTo({
+                    top: resultSectionRef.current.offsetTop,
+                    behavior: "smooth",
+                });
+            }
+        }, 0);
+
+        console.log("搜尋條件：", formFilters);
     };
 
     const registerGeoShapeWatcher = (shape) => {
@@ -48,6 +61,8 @@ function FiltersProvider({ children }) {
         clearDrawLayerFn,
         registerGeoShapeWatcher,
         geoShape,
+        showResultSection,
+        resultSectionRef,
     };
 
     return (

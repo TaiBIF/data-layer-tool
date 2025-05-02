@@ -633,25 +633,27 @@ header {
         font-size: 16px;
         text-align: center;
     }
-    tr:nth-child(odd) {
+    tr:nth-child(even) {
         td {
             background: #f7f7f7;
         }
     }
-    tr:first-child {
-        td {
-            font-size: 16px;
-            background: $col-green2;
-            color: #fff;
-            font-weight: bold;
-            &:first-child {
-                border-radius: 10px 0px 0px 10px;
-            }
-            &:last-child {
-                border-radius: 0px 10px 10px 0px;
-            }
-            @include respond(tablet) {
-                font-size: 18px;
+    thead {
+        tr {
+            td {
+                font-size: 16px;
+                background: $col-green2;
+                color: #fff;
+                font-weight: bold;
+                &:first-child {
+                    border-radius: 10px 0px 0px 10px;
+                }
+                &:last-child {
+                    border-radius: 0px 10px 10px 0px;
+                }
+                @include respond(tablet) {
+                    font-size: 18px;
+                }
             }
         }
     }
