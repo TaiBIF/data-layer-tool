@@ -1,0 +1,69 @@
+@use "./mixin" as *;
+
+@include keyframes(alpha01){
+  0%{@include alpha(0);}
+  100%{@include alpha(1);}
+}
+
+@include keyframes(alphatop30){
+  0%{@include alpha(0); transform: translateY(30px);}
+  100%{@include alpha(1);transform: translateY(0px);}
+}
+@include keyframes(alphabottom30){
+  0%{@include alpha(0); transform: translateY(-30px);}
+  100%{@include alpha(1);transform: translateY(0px);}
+}
+@include keyframes(alphleft30){
+  0%{@include alpha(0); transform: translateX(-30px);}
+  100%{@include alpha(1);transform: translateY(0px);}
+}
+@include keyframes(rotate360){
+  0%{@include rotate(0deg);}
+  100%{@include rotate(360deg);}
+}
+@include keyframes(cirg1){
+  0%{ left:-19vw;  bottom: -18vw;}
+  50%{left: 5vw;  bottom: 16vw;}
+  100%{left:-19vw;  bottom: -18vw;}
+}
+@include keyframes(cirg1m){
+  0%{ left:-40vw;  bottom: -18vw;}
+  50%{left: -15vw;  bottom: 16vw;}
+  100%{left:-40vw;  bottom: -18vw;}
+}
+@include keyframes(cirg2){
+  0%{ left: 3vw;  bottom: -16vw;}
+  25%{left: -15vw;  bottom: -18vw;}
+  50%{left: 10vw;  bottom: -20vw;}
+  75%{left: 0vw;  bottom: -16vw;}
+  100%{left: 3vw;  bottom: -16vw;}
+}
+@include keyframes(cirg2m){
+  0%{ left: 60vw;  bottom: -15vw;}
+  25%{left: -30vw;  bottom: -30vw;}
+  50%{left: 10vw;  bottom:-10vw;}
+  75%{left: 0vw;  bottom: -40vw;}
+  100%{left: 60vw;  bottom: -15vw;}
+}
+@include keyframes(cirg3){
+  0%{ right: -20vw; top: -20vw;}
+  50%{right: -5vw; top: -25vw;}
+  80%{right: -30vw; top: -20vw;}
+  100%{right: -30vw; top: -20vw;}
+}
+@include keyframes(cirg3m){
+  0%{ right: -40vw; top: -30vw;}
+  50%{right: -5vw; top: -20vw;}
+  80%{right: -30vw; top: -10vw;}
+  100%{right: -40vw; top: -30vw;}
+}
+@include keyframes(cirg4){
+  0%{ right: 10vw; top:25vw;}
+  50%{right: -12vw; top: 10vw;}
+  100%{right: 10vw; top: 25vw;}
+}
+@include keyframes(cirg4m){
+  0%{ right: 60vw; top:25vw;}
+  50%{right: -20vw; top: 0vw;}
+  100%{right: 60vw; top: 25vw;}
+}
